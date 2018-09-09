@@ -25,3 +25,7 @@ hs_err_pid*
 # Carpeta
 
 fonts/roboto/*
+
+node_modules/
+platforms/android/
+platforms/ios/

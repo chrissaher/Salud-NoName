@@ -12,6 +12,12 @@ html, body, html * {
     height: 100%;
 }
 
+
+#calendar {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 /* 
 AZUL OSCURO OSUCRO: 41a4c3
 AZUL OSCURO: 3f4b83

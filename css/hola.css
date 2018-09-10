@@ -4,10 +4,20 @@ html, body, html * {
 
 .fondito
 {
-  background: #ffffe3 ;
+  background: #fffde7 ;
 }
 
+#map {
+    width: 100%;
+    height: 100%;
+}
 
+/* 
+AZUL OSCURO OSUCRO: 41a4c3
+AZUL OSCURO: 3f4b83
+
+BLANCO CON AMARILLO: fffde7
+*/
 
 .iconsito50 {
     max-width: 40px; 
@@ -69,25 +79,25 @@ html, body, html * {
 }
 
 .colorFondoW {
-  background: #ffffe3 ;
+  background: #fffde7 ;
   color:#58d5d3;
     
 }
 
 .colorFondoW2 {
-  background: #41a4c3 ;
-  color:#ffffe3;
+  background-color: #41a4c3 ;
+  color:#fffde7;
     
 }
 
 .colorFondo2 {
   background: #50C878 ;
-  color: #ffffe3;
+  color: #fffde7;
 }
 
 .colorFondoLogo {
   background: #58d5d3 ;
-  color: #ffffe3;
+  color: #fffde7;
 }
 
 .colorLogo {
@@ -171,3 +181,15 @@ y
     display: inline-block;
     vertical-align: middle;
 }
+
+/*/ BADGE */
+
+span.badge.normal {
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #fff;
+  background-color: #26a69a;
+  border-radius: 2px;
+}
+
+

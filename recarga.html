@@ -5,9 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login </title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=no">
+    <title>Recarga</title>
+
+    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=1" type="text/css" />
+    <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=1"></script>
+
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
@@ -21,12 +24,21 @@
 
         <script type="text/javascript" src="js/materialize.min.js"></script>    
         <script type="text/javascript" src="js/hola.js"></script>
-    
+        
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+    </style>
 </head>
 
 <body class="fondito">
-    
- 
+   
    <nav >
      <div class="nav-wrapper colorFondoLogo">
               <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large AppName">  <img src="img/hamburguesita.png" class="responsive-img hamburguesita">  </a>  <span class="white-text flow-text" > App Name </span>
@@ -88,22 +100,7 @@
 
 
     
-   <div class="container valign">  
-       
-        <div class="row center longdef">  
-                       
-                  
-        </div>
-       
-
-                            
-       <!-- --> 
-       
-
-       
-       <!-- --> 
-     
-    </div>
+    <div class="container valign "  id="map"> <nav class="white-text flow-text valign-wrapper center-align" > <h5>  Busqueda Farmacias</h5> </nav> </div>
     
   
     
@@ -122,6 +119,9 @@
   </ul>
 </div>
 
+    <script type="text/javascript" src="js/map.js"></script>
+    
+    
 </body>
 
 </html>

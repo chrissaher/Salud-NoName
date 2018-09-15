@@ -1,5 +1,28 @@
+var urlParams;
+
 // SIDEBAR
 $(document).ready(function(){
+  var match;
+  var pl     = /\+/g;  // Regex for replacing addition symbol with a space
+  var search = /([^&=]+)=?([^&]*)/g;
+  var decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); };
+  var query  = window.location.search.substring(1);
+
+  urlParams = {};
+  while (match = search.exec(query)) {
+     urlParams[decode(match[1])] = decode(match[2]);
+  }
+
+  $('#boton-logout').on('click', function(event) {
+    event.preventDefault();
+
+    // Eliminar sesion si esta definida
+    if (sesion !== undefined) {
+      sesion.eliminarSesion();
+    }
+    window.location = $(this).attr('href');
+  });
+
   $('.button-collapse').sideNav({
       menuWidth: 300, // Default is 300
       edge: 'left', // Choose the horizontal origin
@@ -41,7 +64,7 @@ $(document).ready(function(){
           };
         
     });
-    
+    	
 });
 
 

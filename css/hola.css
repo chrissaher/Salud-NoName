@@ -29,14 +29,18 @@ BLANCO CON AMARILLO: fffde7
     max-width: 40px; 
     max-height: 40px;
     margin-left: 5px;
+
 }
 
 
 .iconsitomenu {
-    max-width: 40px; 
-    max-height: 40px;
+    max-width: 35px; 
+    max-height: 35px;
+	margin-top: 5px;
     margin-right: 7px;
+	top: -100px;
 }
+
 
 .logoMenu {
  width: 100px; 

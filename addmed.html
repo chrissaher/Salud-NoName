@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Medicamento </title>
+    
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+      <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/hola.css" />
+    
+       <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript" src="js/materialize.js"></script>    
+        <script type="text/javascript" src="js/hola.js"></script> 
+    
+</head>
+
+<body class="fondito">
+    
+ 
+   <nav >
+     <div class="nav-wrapper colorFondoLogo">
+              <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large AppName">  <img src="img/hamburguesita.png" class="responsive-img hamburguesita">  </a>  <span class="white-text flow-text" > App Name </span>
+             
+                
+             
+              <ul class="side-nav colorFondoLogo darken-2" id="mobile-demo">
+
+
+                <li class="sidenav-header colorFondoW2">
+                       <ul >
+                           
+                           <div class="user-view">
+                              <div class="background">
+                                <div class="parallax"><img src="img/pills.jpg"></div>
+                              </div>
+                                <li>
+                                    <img src="img/avatar1.png" alt="" class="logoMenu">
+                                    <span class="flow-text">Lourdes</span>
+                                </li>  
+                           </div>
+                           
+                       </ul> 
+                    
+                    <div class="divider"></div>
+                </li>
+                  
+                <li class="colorFondoLogo">
+                  <ul class="collapsible collapsible-accordion">  
+                            <li><a class="white-text " href="index.html">  
+                                 <img src="img/inbox.png" alt="" class="responsive-img iconsitomenu">
+                                <span class="flow-text ">Inicio</span> </a></li>
+                            <li><a class="white-text " href="#">  
+                                 <img src="img/heart.png" alt="" class="responsive-img iconsitomenu">
+                                <span class="flow-text">Perfil</span></a></li> 
+                            <li><a class="white-text " href="diario.html">  
+                                 <img src="img/copy.png" alt="" class="responsive-img iconsitomenu">
+                                <span class="flow-text">Diario</span></a></li>  
+                            <li><a class="white-text " href="medicamento.html">  
+                                 <img src="img/medicine2.png" alt="" class="responsive-img iconsitomenu">
+                                <span class="flow-text">Medicina</span></a></li>  
+                            <li><a class="white-text " href="citas.html">  
+                                 <img src="img/med.png" alt="" class="responsive-img iconsitomenu">
+                                <span class="flow-text">Cita Medica</span></a></li>  
+                            <li><a class="white-text " href="recarga.html">  
+                                 <img src="img/medicine.png" alt="" class="responsive-img iconsitomenu">
+                                <span class="flow-text">Recarga</span></a></li>  
+                            <li><a class="white-text " href="login.html">  
+                                 <img src="img/logout.png" alt="" class="responsive-img iconsitomenu">
+                                <span class="flow-text">Log Out</span></a></li>
+                      
+                    </ul>
+                </li>
+            
+              </ul>
+         
+            </div>
+    </nav>
+
+
+    
+   <div class="container valign longdef">  
+       
+        <div class="row longdef">  
+            
+            <div class="col s12">             
+
+                    <h4 class="colorLogo light">  <img class="iconsito50" src="img/medicine4.png">  Medicamentos </h4>
+                 
+                   
+                            <!--span class="flow-text">Medicina: </span-->
+                <form>
+                
+                                <div class="row">
+                                 <div class="input-field col s12">
+                                    <select id="namemedicina" >
+                                      <option value="" disabled selected>Medicina</option>
+                                      <option value="1">APRONAX 1</option>
+                                      <option value="2">APRONAX 2</option>
+                                      <option value="3">APRONAX 3</option>
+                                      <option value="4">APRONAX 4%</option>
+                                    </select>
+                                  </div>
+                                </div>
+                
+                
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label for="fecInicio">Fecha Inicio: </label>
+                                        <input id="fecInicio" type="time" name="Fecha Fin" class="datepicker">
+                                    </div>
+                                </div>
+                
+                
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label for="fecFin">Fecha Fin: </label>
+                                        <input id="fecFin" type="time" name="Fecha Fin" class="datepicker">
+                                    </div>
+                                </div>
+                
+                
+                                
+                                 <span class="flow-text">Intervalo</span>  
+                                  <div class="row center ">
+
+                                        <div id="recurrencia" class="row halign center">
+                                            
+                                              <label class="white">
+                                                  <input type="radio" name="cantdosis" value="1">
+                                                  <span>1 dosis</span>
+                                              </label>
+                                              <label class="white">
+                                                  <input type="radio" name="cantdosis" value="2">
+                                                  <span>2 dosis</span>
+                                              </label>
+                                              <label class="white">
+                                                  <input type="radio" name="cantdosis" value="3">
+                                                  <span>3 dosis</span>
+                                              </label>
+                                              <label class="white">
+                                                  <input type="radio" name="cantdosis" value="4">
+                                                  <span>4 dosis</span>
+                                              </label>
+                                              <label class="white">
+                                                  <input type="radio" name="cantdosis" value="5">
+                                                  <span>5 dosis</span>
+                                              </label>
+                                              <label class="white">
+                                                  <input type="radio" name="cantdosis" value="6">
+                                                  <span>6 dosis</span>
+                                              </label>
+                                            
+                                        </div>                                      
+                                  </div>
+     
+                
+                                <div class="row timeRec" id="DivRecurrencia1">
+                                    <div class="input-field col s12">
+                                        <label for="primeraHora">Hora (Primera Dosis)</label>
+                                        <input id="primeraHora" class="timepicker" type="time">
+                                    </div>
+                                </div>
+
+                                <div class="row timeRec" id="DivRecurrencia2">
+                                    <div class="input-field col s12">
+                                        <label for="segHora">Hora (Segunda Dosis)</label>
+                                        <input id="segHora" class="timepicker" type="time">
+                                    </div>
+                                </div>
+                
+                                <div class="row timeRec" id="DivRecurrencia3">
+                                    <div class="input-field col s12">
+                                        <label for="terceraHora">Hora (Tercera Dosis)</label>
+                                        <input id="terceraHora" class="timepicker" type="time">
+                                    </div>
+                                </div>
+                
+                                <div class="row timeRec" id="DivRecurrencia4">
+                                    <div class="input-field col s12">
+                                        <label for="cuartaHora">Hora (Cuarta Dosis)</label>
+                                        <input id="cuartaHora" class="timepicker" type="time">
+                                    </div>
+                                </div>
+                
+                                <div class="row timeRec" id="DivRecurrencia5">
+                                    <div class="input-field col s12">
+                                        <label for="quintaHora">Hora (Quinta Dosis)</label>
+                                        <input id="quintaHora" class="timepicker" type="time">
+                                    </div>
+                                </div>
+                
+                                <div class="row timeRec" id="DivRecurrencia6" >
+                                    <div class="input-field col s12">
+                                        <label for="sextaHora">Hora (Sexta Dosis)</label>
+                                        <input id="sextaHora" class="timepicker" type="time">
+                                    </div>
+                                </div>
+                
+                                    
+                </form>
+                
+                       <div class="row right">
+                            <div class="input-field col s6">  </div>
+                             <button form="idReg" class="btn waves-effect waves-light colorFondoLogo" type="submit" name="action">Solicitar
+                                    <i class="material-icons right">send</i>
+                             </button>
+                           
+                            <!--a href="#misprestamos" class="waves-effect waves-light btn colorFondoLogo btnmedidaini">Solicitar</a-->
+                       </div>
+                
+                
+            </div>    
+        </div>
+       
+
+                            
+       <!-- --> 
+       
+
+       
+       <!-- --> 
+     
+    </div>
+    
+    
+<script>
+    
+
+    
+</script>
+    
+</body>
+
+</html>
+    

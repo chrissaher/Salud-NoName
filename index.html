@@ -107,15 +107,12 @@
 
   <div class="container valign">  
     <!-- cuantos puntos tienes --> 
-      
-
-      
-    <div class="row">             
-      <ul id="roomList" class="collection with-header"> 
-      </ul>
-    </div>
-                 
+ 
               <div class="row">
+                  
+                        <ul id="roomList" class="collection with-header"> 
+                          </ul>
+                  
                   
                     <div class="col s12 m6">
                       <div class="card">
@@ -188,12 +185,21 @@
   <!-- RECORDATORIO -->
   <script type="text/javascript">
 
+    $(document).ready(function() {
+      // Verificar sesion
+     
+        
+      //if (!sesion.verificarSesion()) {
+        // window.location = "login.html";
+      //}
+
       // Obtener id del usuario desde la sesion
-    //  var idUsuario = 1;
+      var idUsuario = sesion.obtenerSesion().idUsuario;
 
       var data = {
-        type:"GET",      
-        url: "https://salud-noname.herokuapp.com/recordatorios",
+        type:"GET",
+        url: "http://salud-noname.herokuapp.com/recordatorios",
+        // url: "http://digitaldevs-20180914024855686.azurewebsites.net/recordatorios",
         contentType: "application/json; charset=utf-8",
         dataType: "json"
       };
@@ -215,7 +221,6 @@
         $('#roomList').html(statusHTML);
       });
     });
-    
     </script>
 </body>
 

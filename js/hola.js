@@ -43,6 +43,7 @@ $(document).ready(function(){
         firstDay: true,
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15, // Creates a dropdown of 15 years to control year
+		format: 'yyyy-mm-dd',
         vibrate: true 
       });
     
@@ -51,7 +52,9 @@ $(document).ready(function(){
         twelvehour: false, // change to 12 hour AM/PM clock from 24 hour
         donetext: 'OK',
         autoclose: false,
+		//format: 'HH:MM:SS',
         vibrate: true // vibrate the device when dragging clock hand
+		//submit: ''
     });
 
     $("input[name$='cantdosis']").click(function() {

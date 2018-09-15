@@ -113,16 +113,11 @@
                  
                    
                             <!--span class="flow-text">Medicina: </span-->
-                <form>
+                <form id="registrarRecordatorioMedicina" >
                 
                                 <div class="row">
                                  <div class="input-field col s12">
                                     <select id="namemedicina" >
-                                      <option value="" disabled selected>Medicina</option>
-                                      <option value="1">APRONAX 1</option>
-                                      <option value="2">APRONAX 2</option>
-                                      <option value="3">APRONAX 3</option>
-                                      <option value="4">APRONAX 4%</option>
                                     </select>
                                   </div>
                                 </div>
@@ -174,7 +169,6 @@
                                                   <input type="radio" name="cantdosis" value="6">
                                                   <span>6 dosis</span>
                                               </label>
-                                            
                                         </div>                                      
                                   </div>
      
@@ -220,18 +214,18 @@
                                         <input id="sextaHora" class="timepicker" type="time">
                                     </div>
                                 </div>
-                
-                                    
-                </form>
-                
-                       <div class="row right">
+								
+						<div class="row right">
                             <div class="input-field col s6">  </div>
-                             <button form="idReg" class="btn waves-effect waves-light colorFondoLogo" type="submit" name="action">Solicitar
+                             <button form="registrarRecordatorioMedicina" class="btn waves-effect waves-light colorFondoLogo" type="submit" name="action">Solicitar
                                     <i class="material-icons right">send</i>
                              </button>
                            
                             <!--a href="#misprestamos" class="waves-effect waves-light btn colorFondoLogo btnmedidaini">Solicitar</a-->
                        </div>
+                </form>
+                
+                       
                 
                 
             </div>    
@@ -248,11 +242,96 @@
     </div>
     
     
-<script>
-    
+<!-- LISTAR MEDICINAS -->
+  <script type="text/javascript">
+	$('select').on('contentChanged', function() {
+		$(this).formSelect();
+	});
+	
+    $(document).ready(function() {
+	  var idUsuario = 1;
+	  
+	  <!-- LISTAR MEDICINAS -->
+      var data = {
+        type:"GET",
+        url: "http://salud-noname.herokuapp.com/medicinas",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json"
+      };
+      $.ajax(data).then(function(data) {
+        var medicinas = '<option value="" selected disabled>Medicina</option>';
 
-    
-</script>
+        $.each(data, function (i, item) {
+          medicinas += '<option value="' +
+			item.id + '">' + item.nombre + '</option>';
+        });
+        $('#namemedicina').html(medicinas);
+		$('select').material_select();
+      });
+	  
+	  $("#registrarRecordatorioMedicina").submit(function(event) {
+			console.log("ola k ase");
+			event.preventDefault(event);
+			
+			var medId = $('#namemedicina').val();
+			var medText = $('#namemedicina option:selected').text()
+			var sDate = $('#fecInicio').val();
+			var eDate = $('#fecFin').val();
+			var n = $("input[name='cantdosis']:checked", "#recurrencia").val();
+			  
+			var d1 = (n >= 1 ? $('#primeraHora').val() : '');
+			var d2 = (n >= 2 ? $('#segHora').val() : '');
+			var d3 = (n >= 3 ? $('#terceraHora').val() : '');
+			var d4 = (n >= 4 ? $('#cuartaHora').val() : '');
+			var d5 = (n >= 5 ? $('#quintaHora').val() : '');
+			var d6 = (n >= 6 ? $('#sextaHora').val() : '');
+			  
+			console.log(medText);
+			console.log(sDate);
+			console.log(n);
+			console.log(d1);
+			console.log(d2);
+			console.log(d3);
+			console.log(d4);
+			console.log(d5);
+			console.log(d6);
+			var recordatorioData = {
+				"descripcion": medText,
+				"dosis1": d1,
+				"dosis2": d2,
+				"dosis3": d3,
+				"dosis4": d4,
+				"dosis5": d5,
+				"dosis6": d6,
+				"fechaFin": eDate,
+				"fechaInicio": sDate,
+				"medicina": {
+					"id": medId
+				},
+				"paciente": {
+					"id": idUsuario
+				}
+			};
+			 
+			console.log(JSON.stringify(recordatorioData));
+			$.ajax({
+				type: "POST",
+				url: "http://salud-noname.herokuapp.com/recordatorios",
+				data: JSON.stringify(recordatorioData),
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				processData: true,
+				success: function (data, status, jqXHR) {
+					//alert("success..." + data);
+					M.toast({html: 'Se agregó correctamente!'})
+				},
+				error: function (xhr) {
+					alert(xhr.responseText);
+				}
+			});
+		});
+	});
+    </script>
     
 </body>
 
